@@ -6,7 +6,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.luv2code.aopdemo.dao.AccountDAO;
 
-public class AfterReturningDemoApp {
+public class AfterFinallyDemoApp {
 
 	public static void main(String[] args) {
 		
@@ -17,8 +17,8 @@ public class AfterReturningDemoApp {
 		List<Account> accounts = null;
 		
 		try {
-			boolean tripWire = true;
-			accounts = accountDAO.findAccounts(true);
+			boolean tripWire = false;
+			accounts = accountDAO.findAccounts(tripWire);
 		} catch (Exception e) {
 			System.out.println("\n\nMain program caught exception: " + e);
 		}
